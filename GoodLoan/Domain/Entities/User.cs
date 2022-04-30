@@ -7,12 +7,12 @@ namespace Domain.Entities
 {
    public class User: MainEntities
     {
-        //public User()
-        //{
-        //    Loans = new HashSet<Loan>();
-        //    Payments = new HashSet<Payment>();
-           
-        //}
+        public User()
+        {
+            Loans = new HashSet<Loan>();
+            Payments = new HashSet<Payment>();
+          
+        }
         public int UserId { get; set; }
         public int RoleId { get; set; }
         public string FullName { get; set; }
@@ -27,9 +27,9 @@ namespace Domain.Entities
         public string CardNumber { get; set; }
         public string BankName { get; set; }
         
-        //public virtual UserRole UserRole { get; set; }
-        //public virtual ICollection<Loan> Loans { get; set; }
-        //public virtual ICollection<Payment> Payments { get; set; }
+       public virtual UserRole UserRole { get; set; }
+        public virtual ICollection<Loan> Loans { get; set; }
+        public virtual ICollection<Payment> Payments { get; set; }
         
 
     }
