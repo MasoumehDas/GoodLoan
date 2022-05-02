@@ -24,9 +24,9 @@ namespace Contracts.Models
         public byte UserStatus { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        
+
         public UserRoleDto UserRole { get; set; }
-        
+
         public virtual ICollection<LoanDto> Loans { get; set; }
         public virtual ICollection<PaymentDto> Payments { get; set; }
         //public string RoleName { get { return UserRole.RoleName; } }
