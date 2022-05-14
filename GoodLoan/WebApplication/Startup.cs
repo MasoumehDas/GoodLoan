@@ -1,3 +1,4 @@
+using AutoMapper;
 using Domain.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,11 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Persistence;
-using Persistence.Repositories;
 using Services;
 using Services.Abstractions;
+using Services.Mappings;
 using WebApplication.Middleware;
-
 
 
 namespace WebApplication
@@ -30,15 +30,22 @@ namespace WebApplication
         {
             
             services.AddControllers().AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
+            
             services.AddControllersWithViews()
-                .AddNewtonsoftJson(options =>
+                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplication", Version = "v1" });
             });
+            services.AddAutoMapper(System.AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddScoped<IServiceManager, ServiceManager>();
+            
+
+            //services.AddScoped<MappingProfile>();
+
             services.AddScoped<IRepositoryManager, RepositoryManager>();
 
             services.AddDbContext<RepositoryDbContext>(builder =>
@@ -47,22 +54,25 @@ namespace WebApplication
 
                 builder.UseSqlServer(connectionString);
             });
-           
+            
             services.AddTransient<ExceptionHandlingMiddleware>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env )
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplication v1"));
+                
             }
+            app.UseUserRequstMiddleware();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplication v1"));
             //app.UseMiddleware<ExceptionHandlingMiddleware>();
-            app.UseHttpsRedirection();
-
+            
+            app.UseWelcomePage("/Index.html");
+            
             app.UseRouting();
 
             app.UseAuthorization();

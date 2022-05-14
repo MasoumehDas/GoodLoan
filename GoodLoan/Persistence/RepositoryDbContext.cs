@@ -19,7 +19,7 @@ namespace Persistence
         {
         }
 
-        //public virtual DbSet<Enum> Enums { get; set; }
+        public virtual DbSet<_Enums> _Enums { get; set; }
         public virtual DbSet<Installment> Installments { get; set; }
         public virtual DbSet<Loan> Loans { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }

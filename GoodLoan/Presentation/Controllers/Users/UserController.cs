@@ -9,8 +9,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-
-
 namespace Presentation.Controllers.Users
 {
     [ApiController]
@@ -19,8 +17,16 @@ namespace Presentation.Controllers.Users
 
     {
         private readonly IServiceManager _serviceManager;
+        
         public UserController(IServiceManager serviceManager) => _serviceManager = serviceManager;
 
+        //[HttpGet]
+        //public async Task<IEnumerable<_EnumsDto>> GetAllAsync(CancellationToken cancellationToken = default)
+        //{
+        //    var result = await _serviceManager._EnumsService.GetBy_EnumsTypeAsync("PaymentStatus");
+
+        //    return result.ToList();
+        //}
         [HttpGet]
         public async Task<IEnumerable<UserDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {

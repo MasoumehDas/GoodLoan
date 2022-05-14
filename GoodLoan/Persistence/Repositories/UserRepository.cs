@@ -21,8 +21,8 @@ namespace Persistence.Repositories
 
         public async Task<IEnumerable<User>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            //var ss= await _dbContext.Users.Include(a=>a.UserRole).ToListAsync(cancellationToken);
-            var ss = await _dbContext.Users.ToListAsync(cancellationToken);
+            var ss= await _dbContext.Users.Include(a=>a.UserRole).ToListAsync(cancellationToken);
+            //var ss = await _dbContext.Users.ToListAsync(cancellationToken);
             return ss.ToList();
         }
 

@@ -7,19 +7,61 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{122458A5-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E71C0031-4DA5-47FC-A654-445BF25AD727}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{6B07B9A4-27D0-445D-A9FE-796F7BEFD06A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{6B07B9A4-27D0-445D-A9FE-796F7BEFD06A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{803DB6E0-C6D5-476B-A672-AAACD7FF7153}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{803DB6E0-C6D5-476B-A672-AAACD7FF7153}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{5D66F355-2758-4D28-AF6E-A55C5C583CEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{5D66F355-2758-4D28-AF6E-A55C5C583CEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Abstractions", "Services.Abstractions\Services.Abstractions.csproj", "{B0269F64-EA68-4EEA-82C7-4BECE7377DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Abstractions", "Services.Abstractions\Services.Abstractions.csproj", "{B0269F64-EA68-4EEA-82C7-4BECE7377DE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{16001133-C6B1-4E1C-AD70-B07D8606F9C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{16001133-C6B1-4E1C-AD70-B07D8606F9C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{F38D8B40-785A-44E8-87C4-86ED086307E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{F38D8B40-785A-44E8-87C4-86ED086307E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{9A6BA1A0-34C5-42FA-A0F4-3189B7616AD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplication\WebApplication.csproj", "{9A6BA1A0-34C5-42FA-A0F4-3189B7616AD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APP-Front", "APP-Front", "{AF10F14C-2460-460B-A79A-468206FBCA6D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "good-loan-Vue", "..\Presentation\UI\good-loan-Vue\", "{E8F33288-A629-4FCA-8A50-6054F5AEEB5A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_9975"
+		Debug.AspNetCompiler.PhysicalPath = "..\Presentation\UI\good-loan-Vue\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9975\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_9975"
+		Release.AspNetCompiler.PhysicalPath = "..\Presentation\UI\good-loan-Vue\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9975\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "9975"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "good-loan-panel-Angular", "..\Presentation\UI\good-loan-panel-Angular\", "{046C7965-F091-4D2E-A1F7-3E91C98F7887}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_5050"
+		Debug.AspNetCompiler.PhysicalPath = "..\Presentation\UI\good-loan-panel-Angular\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5050\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_5050"
+		Release.AspNetCompiler.PhysicalPath = "..\Presentation\UI\good-loan-panel-Angular\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5050\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "5050"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +97,14 @@ Global
 		{9A6BA1A0-34C5-42FA-A0F4-3189B7616AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A6BA1A0-34C5-42FA-A0F4-3189B7616AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A6BA1A0-34C5-42FA-A0F4-3189B7616AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F33288-A629-4FCA-8A50-6054F5AEEB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F33288-A629-4FCA-8A50-6054F5AEEB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F33288-A629-4FCA-8A50-6054F5AEEB5A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F33288-A629-4FCA-8A50-6054F5AEEB5A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{046C7965-F091-4D2E-A1F7-3E91C98F7887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046C7965-F091-4D2E-A1F7-3E91C98F7887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046C7965-F091-4D2E-A1F7-3E91C98F7887}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{046C7965-F091-4D2E-A1F7-3E91C98F7887}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +116,8 @@ Global
 		{B0269F64-EA68-4EEA-82C7-4BECE7377DE2} = {122458A5-F09F-4AED-B1F0-E921A3B3DB5F}
 		{16001133-C6B1-4E1C-AD70-B07D8606F9C9} = {E71C0031-4DA5-47FC-A654-445BF25AD727}
 		{F38D8B40-785A-44E8-87C4-86ED086307E6} = {E71C0031-4DA5-47FC-A654-445BF25AD727}
+		{E8F33288-A629-4FCA-8A50-6054F5AEEB5A} = {AF10F14C-2460-460B-A79A-468206FBCA6D}
+		{046C7965-F091-4D2E-A1F7-3E91C98F7887} = {AF10F14C-2460-460B-A79A-468206FBCA6D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1EA11AA8-9FA5-4115-BDD4-8A9F7B936125}

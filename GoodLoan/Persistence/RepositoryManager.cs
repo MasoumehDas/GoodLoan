@@ -16,6 +16,7 @@ namespace Persistence
         private readonly Lazy<IUserRepository> _lazyUserRepository;
         private readonly Lazy<IUserRoleMenuAccessRepository> _lazyUserRoleMenuAccessRepository;
         private readonly Lazy<IUserRoleRepository> _lazyUserRoleRepository;
+        private readonly Lazy<I_EnumsRepository> _lazy_EnumsRepository;
 
         public RepositoryManager(RepositoryDbContext dbContext)
         {
@@ -27,6 +28,7 @@ namespace Persistence
             _lazyUserRepository = new Lazy<IUserRepository>(() => new UserRepository(dbContext));
             _lazyUserRoleMenuAccessRepository = new Lazy<IUserRoleMenuAccessRepository>(() => new UserRoleMenuAccessRepository(dbContext));
             _lazyUserRoleRepository =new Lazy<IUserRoleRepository>(() => new UserRoleRepository(dbContext));
+            _lazy_EnumsRepository = new Lazy<I_EnumsRepository>(() => new _EnumsRepository(dbContext));
         }
 
 
@@ -44,5 +46,9 @@ namespace Persistence
         public IUserRoleRepository UserRoleRepository => _lazyUserRoleRepository.Value;
 
         public IUnitOfWork UnitOfWork => _lazyUnitOfWork.Value;
+
+        public I_EnumsRepository _EnumsRepository => _lazy_EnumsRepository.Value;
+
+        
     }
 }

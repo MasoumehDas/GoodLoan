@@ -22,27 +22,27 @@ namespace WebApplication.Middleware
             {
                 _logger.LogError(e, e.Message);
 
-                await HandleExceptionAsync(context, e);
+                //await HandleExceptionAsync(context, e);
             }
         }
 
-        private static async Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
-        {
-            httpContext.Response.ContentType = "application/json";
+        //private static async Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
+        //{
+        //    httpContext.Response.ContentType = "application/json";
 
-            httpContext.Response.StatusCode = exception switch
-            {
-                BadRequestException => StatusCodes.Status400BadRequest,
-                NotFoundException => StatusCodes.Status404NotFound,
-                _ => StatusCodes.Status500InternalServerError
-            };
+        //    httpContext.Response.StatusCode = exception switch
+        //    {
+        //        BadRequestException => StatusCodes.Status400BadRequest,
+        //        NotFoundException => StatusCodes.Status404NotFound,
+        //        _ => StatusCodes.Status500InternalServerError
+        //    };
 
-            var response = new
-            {
-                error = exception.Message
-            };
+        //    var response = new
+        //    {
+        //        error = exception.Message
+        //    };
 
-            await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
-        }
+        //    await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
+        //}
     }
 }

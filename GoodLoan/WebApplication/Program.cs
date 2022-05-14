@@ -30,13 +30,20 @@ namespace WebApplication
 
             await using RepositoryDbContext dbContext = scope.ServiceProvider.GetRequiredService<RepositoryDbContext>();
 
-          await dbContext.Database.MigrateAsync();
+            await dbContext.Database.MigrateAsync();
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
+
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                })
+                .ConfigureLogging((ctx, logging) =>
+                {
+                    logging.AddConfiguration(ctx.Configuration.GetSection("Logging"));
+
                 });
+
     }
 }

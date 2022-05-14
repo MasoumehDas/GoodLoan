@@ -13,5 +13,6 @@ namespace Domain.Repositories
         IUserRoleMenuAccessRepository UserRoleMenuAccessRepository { get; }
         IUserRoleRepository UserRoleRepository { get; }
         IUnitOfWork UnitOfWork { get; }
+        I_EnumsRepository _EnumsRepository { get; }
     }
 }
