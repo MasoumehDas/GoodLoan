@@ -14,5 +14,6 @@ namespace Domain.Repositories
         IUserRoleRepository UserRoleRepository { get; }
         IUnitOfWork UnitOfWork { get; }
         I_EnumsRepository _EnumsRepository { get; }
+        ISettingRepository SettingRepository { get; }
     }
 }

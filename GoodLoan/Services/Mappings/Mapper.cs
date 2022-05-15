@@ -9,7 +9,7 @@ using Domain.Entities;
 
 namespace Services
 {
-    public class Mapper<T, U> where T : class
+    internal class Mapper<T, U> where T : class
     {
         private Dictionary<string, List<object>> _keyValues;
 

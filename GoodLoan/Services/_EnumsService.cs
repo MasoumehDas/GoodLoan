@@ -23,5 +23,6 @@ namespace Services
             var list = MapObject.Mapping_EnumsDto(result.ToList());
             return list;
         }
+
     }
 }

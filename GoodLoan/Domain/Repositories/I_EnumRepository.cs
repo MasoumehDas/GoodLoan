@@ -11,5 +11,7 @@ namespace Domain.Repositories
         Task<_Enums> GetBy_EnumIdAsync(int _EnumId);
         Task<List<_Enums>> GetBy_EntitiyUsedAsync(string EntitiyUsed);
         Task<IEnumerable<_Enums>> GetBy_EnumsValueAsync(string EntitiyUsed, string _EnumsValue);
+
+        
     }
 }

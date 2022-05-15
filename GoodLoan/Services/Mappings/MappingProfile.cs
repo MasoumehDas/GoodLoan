@@ -18,6 +18,7 @@ namespace Services.Mappings
             CreateMap<Installment, InstallmentDto>();
             CreateMap<UserRoleMenuAccess, UserRoleMenuAccessDto>();
             CreateMap<UserMenu, UserMenuDto>();
+            CreateMap<Setting, SettingDto>();
             //Map from Developer Object to DeveloperDTO Object
         }
     }

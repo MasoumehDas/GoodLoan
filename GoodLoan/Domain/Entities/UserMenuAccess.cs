@@ -10,7 +10,7 @@ namespace Domain.Entities
         public int RoleId { get; set; }
         public int UserMenuId { get; set; }
        
-        public UserMenu UserMenu { get; set; }
+        public UserSubMenu UserMenu { get; set; }
         public UserRole UserRole { get; set; }
 
     }

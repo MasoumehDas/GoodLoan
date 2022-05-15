@@ -10,5 +10,6 @@ namespace Domain.Entities
         public string EnumsType { get; set; }
         public string EnumsValue { get; set; }
         public string EntitiyUsed { get; set; }
+        public string EnumsTitle { get; set; }
     }
 }

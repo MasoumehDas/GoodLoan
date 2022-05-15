@@ -25,6 +25,9 @@ namespace Persistence
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserMenu> UserMenu { get; set; }
+        public virtual DbSet<UserSubMenu> UserSubMenu { get; set; }
+        public virtual DbSet<Setting> Settings { get; set; }
+        public virtual DbSet<VisitedHistory> VisitedHistory { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<UserRoleMenuAccess> UserRoleMenuAccess { get; set; }
 

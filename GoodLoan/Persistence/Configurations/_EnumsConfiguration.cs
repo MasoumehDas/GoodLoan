@@ -17,6 +17,7 @@ namespace Persistence.Configurations
             builder.Property(e => e.EntitiyUsed).HasMaxLength(50);
 
             builder.Property(e => e.EnumsType).HasMaxLength(50);
+            builder.Property(e => e.EnumsTitle).HasMaxLength(50);
 
             builder.Property(e => e.EnumsValue).HasMaxLength(50);
             

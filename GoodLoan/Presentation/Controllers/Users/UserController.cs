@@ -27,13 +27,19 @@ namespace Presentation.Controllers.Users
 
         //    return result.ToList();
         //}
+        //[HttpGet]
+        //public async Task<IEnumerable<UserDto>> GetAllAsync(CancellationToken cancellationToken = default)
+        //{
+        //    var result = await _serviceManager.UserService.GetAllAsync();
+
+        //    return result.ToList();
+        //}
         [HttpGet]
-        public async Task<IEnumerable<UserDto>> GetAllAsync(CancellationToken cancellationToken = default)
+        public async Task<List<SettingDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            var result = await _serviceManager.UserService.GetAllAsync();
+            var result = await _serviceManager.SettingService.GetBySettingProcAsync("PaymentStatus","","");
 
             return result.ToList();
         }
-
     }
 }

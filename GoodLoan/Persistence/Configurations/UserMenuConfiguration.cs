@@ -16,8 +16,10 @@ namespace Persistence.Configurations
             builder.Property(user => user.CreateDate).HasDefaultValue(DateTime.Now);
             builder.Property(user => user.Active).HasDefaultValue(true);
             builder.Property(user => user.IsShow).HasDefaultValue(true);
-            
+            builder.Property(user => user.ControlID).HasMaxLength(50);
+            builder.Property(user => user.Title).HasMaxLength(50);
 
         }
     }
+    
 }

@@ -1,4 +1,5 @@
 ﻿using Domain.Repositories;
+using Microsoft.Extensions.Configuration;
 using Persistence.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace Persistence
         private readonly Lazy<IUserRoleMenuAccessRepository> _lazyUserRoleMenuAccessRepository;
         private readonly Lazy<IUserRoleRepository> _lazyUserRoleRepository;
         private readonly Lazy<I_EnumsRepository> _lazy_EnumsRepository;
-
+        private readonly Lazy<ISettingRepository> _lazy_SettingRepository;
+        public IConfiguration Configuration { get; }
         public RepositoryManager(RepositoryDbContext dbContext)
         {
+            string GetConnectionString = "Server=.;Database=GoodLoan;Trusted_Connection=True;";
             _lazyInstallmentRepository = new Lazy<IInstallmentRepository>(() => new InstallmentRepository(dbContext));
             _lazyLoanRepository = new Lazy<ILoanRepository>(() => new LoanRepository(dbContext));
             _lazyUnitOfWork = new Lazy<IUnitOfWork>(() => new UnitOfWork(dbContext));
@@ -29,6 +32,7 @@ namespace Persistence
             _lazyUserRoleMenuAccessRepository = new Lazy<IUserRoleMenuAccessRepository>(() => new UserRoleMenuAccessRepository(dbContext));
             _lazyUserRoleRepository =new Lazy<IUserRoleRepository>(() => new UserRoleRepository(dbContext));
             _lazy_EnumsRepository = new Lazy<I_EnumsRepository>(() => new _EnumsRepository(dbContext));
+            _lazy_SettingRepository = new Lazy<ISettingRepository>(() => new SettingRepository(dbContext,new ADOConnection<Domain.Entities.Setting>(GetConnectionString)));
         }
 
 
@@ -48,7 +52,8 @@ namespace Persistence
         public IUnitOfWork UnitOfWork => _lazyUnitOfWork.Value;
 
         public I_EnumsRepository _EnumsRepository => _lazy_EnumsRepository.Value;
+        public ISettingRepository SettingRepository => _lazy_SettingRepository.Value;
 
-        
+
     }
 }

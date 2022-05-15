@@ -8,6 +8,7 @@ namespace Domain.Enums
     //Types of financial transactions
    public enum PaymentStatus
     {
+        
         Receipt=1,//دریافت
         Pay=2//پرداخت
         

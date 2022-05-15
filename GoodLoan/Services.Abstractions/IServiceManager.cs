@@ -9,6 +9,8 @@ namespace Services.Abstractions
     {
         IUserService UserService { get; }
         I_EnumsService _EnumsService { get; }
-        
+        ISettingService SettingService { get; }
+
+
     }
 }
